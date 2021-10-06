@@ -1,7 +1,7 @@
 // Refactor this file so that:
 // All functions are in a separate module called math.js 
 
-import {add, subtract, multiply} from "./math.js"
+import {}
 
 const answer1 = add(21, 21);
 console.log(answer1);

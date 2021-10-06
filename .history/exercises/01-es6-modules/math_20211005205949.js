@@ -17,4 +17,4 @@ export const subtract = (a,b) => a-b;
   return a * b;
 } */
 
-export const multiply = (a,b) => a*b;
+const multiply = (a,b) => a*b;
