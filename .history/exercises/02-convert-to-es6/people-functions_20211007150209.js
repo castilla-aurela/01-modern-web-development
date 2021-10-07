@@ -11,10 +11,11 @@ The following code will be refactored when:
 */
 
 import {people} from './people.js'
-import getEmails from './getEmails.js'
+import {}
 
 
-export default function getAddresses (people, options) {
+
+function getAddresses (people, options) {
   options  || {}
   let onlyActive = options.onlyActive || false
 
@@ -44,7 +45,6 @@ ${address.city}, ${address.state}`);
     return fullAddress
   }).join('\n\n')
 }
-
 
 function getYoungest (people) {
   people.sort( (personA, personB) => {

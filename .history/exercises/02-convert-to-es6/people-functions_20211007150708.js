@@ -12,7 +12,7 @@ The following code will be refactored when:
 
 import {people} from './people.js'
 import getEmails from './getEmails.js'
-
+import getAddresses from './getAddresses.js'
 
 export default function getAddresses (people, options) {
   options  || {}
