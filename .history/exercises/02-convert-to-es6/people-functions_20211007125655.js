@@ -14,7 +14,7 @@ import {people} from './people.js'
 
 
 function getEmails (people, options) {
-  options || {}
+  options= options || {}
   const withNames = options.withNames || false
   const onlyActive = options.onlyActive || false
 
@@ -37,7 +37,7 @@ function getEmails (people, options) {
 }
 
 function getAddresses (people, options) {
-  options  || {}
+  options = options || {}
   let onlyActive = options.onlyActive || false
 
   if (onlyActive) {
@@ -48,21 +48,16 @@ function getAddresses (people, options) {
     let address = person.address
     //var fullAddress = person.name + '\n' + address.line1 + '\n'
     
-    let fullAddress = (
-    `${person.name}  
-${address.line1}`)
+    let fullAddress = ()`${person.name}  
+                      ${address.line} \n`
     if (address.line2) {
-      //fullAddress += address.line2 + '\n'
-      fullAddress = (
-`${fullAddress}
-${address.line2}`
-      )
+      fullAddress += address.line2 + '\n'
+      //fullAddress += `${address.line2} \n`
     }
     
 
     //fullAddress += address.city + ', ' + address.state
-    fullAddress = (`${fullAddress}
-${address.city}, ${address.state}`);
+    fullAddress += `${address.city}, ${address.state}`;
     return fullAddress
   }).join('\n\n')
 }

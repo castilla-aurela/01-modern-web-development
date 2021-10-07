@@ -14,7 +14,7 @@ import {people} from './people.js'
 
 
 function getEmails (people, options) {
-  options || {}
+  options= options || {}
   const withNames = options.withNames || false
   const onlyActive = options.onlyActive || false
 

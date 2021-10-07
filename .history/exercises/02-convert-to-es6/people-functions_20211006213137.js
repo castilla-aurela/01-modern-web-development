@@ -11,12 +11,12 @@ The following code will be refactored when:
 */
 
 import {people} from './people.js'
-
+const {name, email } = people
 
 function getEmails (people, options) {
   options || {}
-  const withNames = options.withNames || false
-  const onlyActive = options.onlyActive || false
+  var withNames = options.withNames || false
+  var onlyActive = options.onlyActive || false
 
   if (onlyActive) {
     people = people.filter(isActive)
@@ -27,7 +27,7 @@ function getEmails (people, options) {
 
     if (withNames) {
       //result = person.name + ' <' + person.email + '>' 
-      result = `${person.name} <${person.email}>`
+      result = `${name} <${person.email}>`
     } else {
       result = person.email
     }
@@ -37,32 +37,26 @@ function getEmails (people, options) {
 }
 
 function getAddresses (people, options) {
-  options  || {}
-  let onlyActive = options.onlyActive || false
+  options || {}
+  var onlyActive = options.onlyActive || false
 
   if (onlyActive) {
     people = people.filter(isActive)
   }
 
   return people.map((person) => {
-    let address = person.address
+    const address = person.address
     //var fullAddress = person.name + '\n' + address.line1 + '\n'
     
-    let fullAddress = (
-    `${person.name}  
-${address.line1}`)
+    let fullAddress = `${person.name} \n ${address.line} \n`
     if (address.line2) {
       //fullAddress += address.line2 + '\n'
-      fullAddress = (
-`${fullAddress}
-${address.line2}`
-      )
+      fullAddress += `${address.line2} \n`
     }
     
 
     //fullAddress += address.city + ', ' + address.state
-    fullAddress = (`${fullAddress}
-${address.city}, ${address.state}`);
+    fullAddress += `${address.city}, ${address.state}`;
     return fullAddress
   }).join('\n\n')
 }
