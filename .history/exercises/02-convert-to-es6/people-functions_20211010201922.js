@@ -15,7 +15,7 @@ import getEmails from './getEmails.js'
 
 
 export default function getAddresses (people, options = {}) {
-  //options  || {}
+  options  || {}
   let onlyActive = options.onlyActive || false
 
   if (onlyActive) {
